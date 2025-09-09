@@ -21,9 +21,9 @@ public class AnalyticsManager : MonoBehaviour
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    async void Start()
     {
-        UnityServices.InitializeAsync(); // Analytics SDK UCG SDK 초기화
+        await UnityServices.InitializeAsync(); // Analytics SDK UCG SDK 초기화
         AnalyticsService.Instance.StartDataCollection();
     }
 
