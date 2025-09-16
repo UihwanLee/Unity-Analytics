@@ -54,11 +54,11 @@ public class ShopManager : MonoBehaviour
         productList = new List<Item>(loadItems);
 
         // 페이지 초기화
-        currentPage = 1;
-        maxPage = productList.Count / 4 + 1;
+        maxPage = Mathf.Max(1, Mathf.CeilToInt(productList.Count / (float)MAX_PRODUCTSLOT));
+        currentPage = Mathf.Clamp(currentPage, 1, maxPage);
 
         // 상품 슬롯 4개 생성
-        for(int i=0; i<MAX_PRODUCTSLOT; i++)
+        for (int i=0; i<MAX_PRODUCTSLOT; i++)
         {
             GameObject newProductSlot = Instantiate(productSlotPrefab, listParent);
             productSlotList.Add(newProductSlot);
