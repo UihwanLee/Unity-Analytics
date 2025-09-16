@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2735649750521775623}
   - component: {fileID: 800965923267035567}
   m_Layer: 5
-  m_Name: ButtonCountUp (1)
+  m_Name: ButtonCountDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2735649750521775623}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7509953557762224892}
+        m_TargetAssemblyTypeName: ProductSlot, Assembly-CSharp
+        m_MethodName: Decrese
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &174894705554579282
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +331,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6161730730782687535}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7509953557762224892}
+        m_TargetAssemblyTypeName: ProductSlot, Assembly-CSharp
+        m_MethodName: Purchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &411193561558039576
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +700,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8294044785958086685}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7509953557762224892}
+        m_TargetAssemblyTypeName: ProductSlot, Assembly-CSharp
+        m_MethodName: Increse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2314571419483969339
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,10 +892,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productSprite: {fileID: 5005355487599646327}
-  productName: {fileID: 1482157710882662954}
-  productPrice: {fileID: 3435877313999836196}
-  productCount: {fileID: 5999974407451069539}
-  totalPrice: {fileID: 8679912014023200213}
+  productNameTxt: {fileID: 1482157710882662954}
+  productPriceTxt: {fileID: 3435877313999836196}
+  productCountTxt: {fileID: 5999974407451069539}
+  totalPriceTxt: {fileID: 8679912014023200213}
+  purchaseCountTxt: {fileID: 7598774138142461747}
   item: {fileID: 0}
 --- !u!1 &5996544408928730389
 GameObject:
@@ -1133,7 +1170,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -434, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2704549914277403080
 CanvasRenderer:
@@ -1156,7 +1193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
