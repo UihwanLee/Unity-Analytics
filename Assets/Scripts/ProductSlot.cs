@@ -55,7 +55,7 @@ public class ProductSlot : MonoBehaviour
     // 상품 제거
     public void Decrese()
     {
-        if (purchaseCount < 0) return;
+        if (purchaseCount <= 0) return;
 
         purchaseCount--;
         totalPrice = item.price * purchaseCount;
