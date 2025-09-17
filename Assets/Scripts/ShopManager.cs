@@ -9,7 +9,7 @@ public class ShopManager : MonoBehaviour
 {
     public static ShopManager Instance { get; private set; }
 
-    [Header("ShopItems")]
+    [Header("상품 페이지 정보")]
     [SerializeField] private int maxProductSlots = 3;                   // 상품 리스트 최대 개수
     [SerializeField] private Transform productListParent;               // 상품 리스트 위치
     [SerializeField] private GameObject productSlotPrefab;              // 상품 슬롯 프리팹
@@ -19,13 +19,13 @@ public class ShopManager : MonoBehaviour
     // 런타임 샵 항목(Asset(Item) 수정하지 않음)
     private List<ShopItem> shopItems = new List<ShopItem>();
 
-    [Header("ShoppingCart")]
+    [Header("쇼핑카트 정보")]
     [SerializeField] private Transform shoppingCartListParent;          // 쇼핑 카드 리스트 위치
     [SerializeField] private GameObject shoppingCartSlotPrefab;         // 쇼핑 카드 슬롯 프리팹
     
     private List<ShopItem> cartList = new List<ShopItem>();
 
-    [Header("PlayerInfo")]
+    [Header("플레이어 정보")]
     [SerializeField] private Text userMoneyTxt;                         // 플레이어 보유 금액
 
     [Header("Value")]
@@ -95,7 +95,7 @@ public class ShopManager : MonoBehaviour
     {
         maxPage = Mathf.Max(1, Mathf.CeilToInt(shopItems.Count / (float)maxProductSlots));
         currentPage = Mathf.Clamp(currentPage, 1, maxPage);
-        productPageTxt.text = currentPage + "/" + maxPage;
+        productPageTxt.text = $"{currentPage}/{maxPage}"; 
     }
 
     // 상품 리스트 갱신

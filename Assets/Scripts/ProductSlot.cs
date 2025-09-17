@@ -5,7 +5,7 @@ using static ShopManager;
 
 public class ProductSlot : MonoBehaviour
 {
-    [Header("Component")]
+    [Header("상품 정보")]
     [SerializeField] private Image productSprite;       // 상품 이미지
     [SerializeField] private Text productNameTxt;       // 상품 이름
     [SerializeField] private Text productPriceTxt;      // 상품 가격
@@ -13,7 +13,7 @@ public class ProductSlot : MonoBehaviour
     [SerializeField] private Text totalPriceTxt;        // 구매 금액
     [SerializeField] private Text purchaseCountTxt;     // 구매 수량
 
-    [Header("Item")]
+    [Header("Item 데이터")]
     public Item item;
 
     [Header("Info")]
@@ -48,7 +48,7 @@ public class ProductSlot : MonoBehaviour
 
         // 텍스트 갱신
         totalPriceTxt.text = totalPrice.ToString();
-        purchaseCountTxt.text = "x" + purchaseCount.ToString();
+        purchaseCountTxt.text = $"x{purchaseCount}";
 
         // 재고 표시
         if (shopItem.stock <= 0)
@@ -58,7 +58,7 @@ public class ProductSlot : MonoBehaviour
         }
         else
         {
-            productCountTxt.text = "x" + shopItem.stock;
+            productCountTxt.text = $"x{shopItem.stock}";
             productCountTxt.color = Color.black;
         }
     }
@@ -87,7 +87,7 @@ public class ProductSlot : MonoBehaviour
         totalPrice = shopItem.price * purchaseCount;
 
         totalPriceTxt.text = totalPrice.ToString();
-        purchaseCountTxt.text = "x" + purchaseCount.ToString();
+        purchaseCountTxt.text = $"x{purchaseCount}";
     }
 
     // 상품 제거
@@ -100,7 +100,7 @@ public class ProductSlot : MonoBehaviour
         totalPrice = shopItem.price * purchaseCount;
 
         totalPriceTxt.text = totalPrice.ToString();
-        purchaseCountTxt.text = "x" + purchaseCount.ToString();
+        purchaseCountTxt.text = $"x{purchaseCount}";
     }
 
     // 상품 구매
@@ -132,6 +132,6 @@ public class ProductSlot : MonoBehaviour
         totalPrice = shopItem.price * purchaseCount;
 
         totalPriceTxt.text = totalPrice.ToString();
-        purchaseCountTxt.text = "x" + purchaseCount.ToString();
+        purchaseCountTxt.text = $"x{purchaseCount}";
     }
 }
