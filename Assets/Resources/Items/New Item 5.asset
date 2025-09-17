@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c8f09a5de30884696b420aa8aabb3f, type: 3}
   m_Name: New Item 5
   m_EditorClassIdentifier: 
+  id: 0
   name: "\uD558\uC591 \uD3EC\uC158"
   sprite: {fileID: 21300000, guid: 6203f403ed3963f4b96b81fe965bbb92, type: 3}
   price: 600
-  count: 99
+  stock: 99

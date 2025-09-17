@@ -2092,12 +2092,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cded12649853ff546893dfd2bd312ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  category: 0
+  maxProductSlots: 4
   listParent: {fileID: 1011600605}
   productSlotPrefab: {fileID: 5475794865573072152, guid: c71377ce28806194b908c99e1b16fcea, type: 3}
-  productSlotList: []
-  productList: []
-  pageTxt: {fileID: 61091624}
+  productPageTxt: {fileID: 61091624}
   userMoneyTxt: {fileID: 1547057628}
 --- !u!4 &917964045
 Transform:
@@ -2439,7 +2437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000009993288}
+  m_AnchoredPosition: {x: 0, y: -0.000024795532}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1011600606
