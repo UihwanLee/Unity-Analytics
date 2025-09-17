@@ -9,9 +9,9 @@ public class ShopManager : MonoBehaviour
 {
     public static ShopManager Instance { get; private set; }
 
-    [Header("ProductArea")]
-    [SerializeField] private int maxProductSlots = 4;                   // 상품 리스트 최대 개수
-    [SerializeField] private Transform listParent;                      // 상품 리스트 위치
+    [Header("ShopItems")]
+    [SerializeField] private int maxProductSlots = 3;                   // 상품 리스트 최대 개수
+    [SerializeField] private Transform productListParent;               // 상품 리스트 위치
     [SerializeField] private GameObject productSlotPrefab;              // 상품 슬롯 프리팹
     [SerializeField] private Text productPageTxt;                       // 상품페이지
     private List<GameObject> productSlotList = new List<GameObject>();  // 상품 리스트
@@ -19,7 +19,13 @@ public class ShopManager : MonoBehaviour
     // 런타임 샵 항목(Asset(Item) 수정하지 않음)
     private List<ShopItem> shopItems = new List<ShopItem>();
 
-    [Header("PlayerArea")]
+    [Header("ShoppingCart")]
+    [SerializeField] private Transform shoppingCartListParent;          // 쇼핑 카드 리스트 위치
+    [SerializeField] private GameObject shoppingCartSlotPrefab;         // 쇼핑 카드 슬롯 프리팹
+    
+    private List<ShopItem> cartList = new List<ShopItem>();
+
+    [Header("PlayerInfo")]
     [SerializeField] private Text userMoneyTxt;                         // 플레이어 보유 금액
 
     [Header("Value")]
@@ -70,7 +76,7 @@ public class ShopManager : MonoBehaviour
     {
         for (int i = productSlotList.Count; i < maxProductSlots; i++)
         {
-            var go = Instantiate(productSlotPrefab, listParent);
+            var go = Instantiate(productSlotPrefab, productListParent);
             go.SetActive(false);
             productSlotList.Add(go);
 
