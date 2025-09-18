@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 2367399821254964654}
   - component: {fileID: 5999974407451069539}
   m_Layer: 5
-  m_Name: ItemCount
+  m_Name: ItemStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -891,10 +891,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5006316f2e5db48a49a192336f897b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productSprite: {fileID: 5005355487599646327}
-  productNameTxt: {fileID: 1482157710882662954}
-  productPriceTxt: {fileID: 3435877313999836196}
-  productCountTxt: {fileID: 5999974407451069539}
+  itemSprite: {fileID: 5005355487599646327}
+  itemNameTxt: {fileID: 1482157710882662954}
+  itemPriceTxt: {fileID: 3435877313999836196}
+  itemStockTxt: {fileID: 5999974407451069539}
   totalPriceTxt: {fileID: 8679912014023200213}
   purchaseCountTxt: {fileID: 7598774138142461747}
   item: {fileID: 0}

@@ -3,46 +3,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using static ShopManager;
 
-public class ProductSlot : MonoBehaviour
+public class ProductSlot : SlotBase
 {
-    [Header("상품 정보")]
-    [SerializeField] private Image productSprite;       // 상품 이미지
-    [SerializeField] private Text productNameTxt;       // 상품 이름
-    [SerializeField] private Text productPriceTxt;      // 상품 가격
-    [SerializeField] private Text productCountTxt;      // 상품 수량
-    [SerializeField] private Text totalPriceTxt;        // 구매 금액
-    [SerializeField] private Text purchaseCountTxt;     // 구매 수량
-
-    [Header("Item 데이터")]
-    public Item item;
-
-    [Header("Info")]
-    private ShopManager.ShopItem shopItem;
-    private int totalPrice;          // 현재 구매하려는 총 금액
-    private int purchaseCount;       // 현재 구매하려는 수량
+    [SerializeField] protected Text itemStockTxt;       // 상품 재고
 
     // 콜백: (itemId, qty) => bool success
     public Func<int, int, bool> OnBuyRequested;
 
     // 슬롯 갱신
-    public void SlotUpdate(ShopManager.ShopItem itemData)
+    public override void SlotUpdate(ShopManager.ShopItem itemData)
     {
-        if(itemData == null)
-        {
-            Debug.LogWarning("No item assigned to this slot!");
-            ClearSlot();
-            return;
-        }
+        base.SlotUpdate(itemData);
 
-        shopItem = itemData;
-
-        // UI 갱신
-        productNameTxt.text = shopItem.itemDef.name;
-        productPriceTxt.text = shopItem.price.ToString();
-        if (shopItem.itemDef.sprite != null)
-            productSprite.sprite = shopItem.itemDef.sprite;
-
-        // 기본 구매 수량 (재고 있을 때만 1개)
+        // 기본 구매 수량
         purchaseCount = (shopItem.stock > 0) ? 1 : 0;
         totalPrice = shopItem.price * purchaseCount;
 
@@ -53,28 +26,20 @@ public class ProductSlot : MonoBehaviour
         // 재고 표시
         if (shopItem.stock <= 0)
         {
-            productCountTxt.text = "Sold Out";
-            productCountTxt.color = Color.red;
+            itemStockTxt.text = "Sold Out";
+            itemStockTxt.color = Color.red;
         }
         else
         {
-            productCountTxt.text = $"x{shopItem.stock}";
-            productCountTxt.color = Color.black;
+            itemStockTxt.text = $"x{shopItem.stock}";
+            itemStockTxt.color = Color.black;
         }
     }
 
-    // 슬롯 비우기
-    public void ClearSlot()
+    public override void ClearSlot()
     {
-        shopItem = null;
-        productNameTxt.text = "";
-        productCountTxt.text = "";
-        productPriceTxt.text = "";
-        productSprite.sprite = null;
-        totalPriceTxt.text = "0";
-        purchaseCountTxt.text = "x0";
-        purchaseCount = 0;
-        totalPrice = 0;
+        base.ClearSlot();
+        itemStockTxt.text = "";
     }
 
     // 상품 추가
@@ -118,7 +83,7 @@ public class ProductSlot : MonoBehaviour
         else
         {
             // 콜백이 없을 경우(안전장치) 직접 ShopManager 호출
-            success = ShopManager.Instance.Purchase(shopItem, purchaseCount);
+            success = ShopManager.Instance.AddToCart(shopItem, purchaseCount);
         }
 
         if (!success)
