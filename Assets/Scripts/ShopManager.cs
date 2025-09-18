@@ -246,13 +246,6 @@ public class ShopManager : MonoBehaviour
             return;
         }
 
-        // 결제 진행
-        foreach (var entry in cartList)
-        {
-            entry.item.stock -= entry.qty;
-            if (entry.item.stock < 0) entry.item.stock = 0;
-        }
-
         userMoney -= totalCost;
         OnMoneyChanged?.Invoke(userMoney);
 
