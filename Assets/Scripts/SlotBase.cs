@@ -4,17 +4,17 @@ using UnityEngine.UI;
 
 public abstract class SlotBase : MonoBehaviour, ISlot
 {
-    [Header("상품 정보")]
+    [Header("Item Info")]
     [SerializeField] protected Image itemSprite;        // 상품 이미지
     [SerializeField] protected Text itemNameTxt;        // 상품 이름
     [SerializeField] protected Text itemPriceTxt;       // 상품 가격
     [SerializeField] protected Text totalPriceTxt;      // 구매 금액
     [SerializeField] protected Text purchaseCountTxt;   // 구매 수량
 
-    [Header("Item 데이터")]
+    [Header("Item Data")]
     public Item item;
 
-    [Header("정보")]
+    [Header("Value")]
     protected ShopManager.ShopItem shopItem;            // 상품 복사본
     protected int totalPrice;                           // 구매 금액
     protected int purchaseCount;                        // 구매 수량

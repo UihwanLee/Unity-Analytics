@@ -69,7 +69,7 @@ public class ProductSlot : SlotBase
     }
 
     // 상품 구매
-    public void Purchase()
+    public void AddToCart()
     {
         if (shopItem == null) return;
         if (purchaseCount <= 0) return;

@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 6161730730782687535}
   - component: {fileID: 2933106175884877776}
   m_Layer: 5
-  m_Name: ButtonPurchase
+  m_Name: ButtonAddToCart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7509953557762224892}
         m_TargetAssemblyTypeName: ProductSlot, Assembly-CSharp
-        m_MethodName: Purchase
+        m_MethodName: AddToCart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -894,10 +894,10 @@ MonoBehaviour:
   itemSprite: {fileID: 5005355487599646327}
   itemNameTxt: {fileID: 1482157710882662954}
   itemPriceTxt: {fileID: 3435877313999836196}
-  itemStockTxt: {fileID: 5999974407451069539}
   totalPriceTxt: {fileID: 8679912014023200213}
   purchaseCountTxt: {fileID: 7598774138142461747}
   item: {fileID: 0}
+  itemStockTxt: {fileID: 5999974407451069539}
 --- !u!1 &5996544408928730389
 GameObject:
   m_ObjectHideFlags: 0
